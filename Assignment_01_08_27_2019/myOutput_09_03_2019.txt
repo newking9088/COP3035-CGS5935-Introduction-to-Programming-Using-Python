@@ -1,0 +1,26 @@
+Python 3.7.2 (tags/v3.7.2:9a3ffc0492, Dec 23 2018, 23:09:28) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\npaudel\Google Drive\Programming notes\Python\COP_3035_Introduction_to_Programming_Using_Python\Assignment_1_08_27_2019\paudel_np17d_p1.py 
+******************************
+Box Office Receipts Calculator
+******************************
+
+Enter the name of the movie: Les Miserable
+Enter the number of adult tickets sold: 382
+Enter the number of child tickets sold: 127
+
+Revenue Report
+==============
+
+Movie Name:  Les Miserable
+Adult Tickets Sold:  382
+Child Tickets Sold:  127
+Gross Box Office Profit: $ 3850.25
+Net Box Office Profit: $ 770.05
+Amount Paid to Distributor: $ 2964885.01 
+
+******************************************************
+Thanks for Using the Box Office Receipts Calculator!!!
+******************************************************
+>>> 

@@ -1,0 +1,70 @@
+
+Please enter a file name: fred
+Cannot open file. Enter new a file name: susie
+Cannot open file. Enter new a file name: dna2.txt
+Original Sequence Read from File:  TCCTTATTCCGTGGGTCCCCGGTTC
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: 1
+-=-=-=-=-=-
+
+Original  :  TCCTTATTCCGTGGGTCCCCGGTTC
+Complement:  AGGAATAAGGCACCCAGGGGCCAAG
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: 2
+-=-=-=-=-=-
+
+Original:  TCCTTATTCCGTGGGTCCCCGGTTC
+Mutation:  MCCTMATTMMGTGGGTCCCMGGTTC
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: 3
+-=-=-=-=-=-
+
+Original:  TCCTTATTCCGTGGGTCCCCGGTTC
+Please enter substring: GGG
+Found At Index:  12
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: 5
+-=-=-=-=-=-
+
+Invalid Selection
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: -1
+-=-=-=-=-=-
+
+Invalid Selection
+
+Enter a number 1-4
+1. Find the complement of the strand
+2. Mutate the DNA strand
+3. Find substrand within the strand
+4. Quit
+Enter your choice: 4
+-=-=-=-=-=-
+
+Finished
+>>> 

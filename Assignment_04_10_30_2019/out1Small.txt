@@ -1,0 +1,84 @@
+----------=====******=====----------
+     Rock, Paper, and Scissors
+----------=====******=====----------
+
+  This program plays the EXCITING game of Rock, Paper,
+and Scissors.  Two players choose either Rock, Paper or Scissors,
+and the results of their picks are compared.  Each match is
+determined as follows:
+
+        Player 1     Player 2     Result
+        --------     --------     ------
+        Rock         Paper        Paper covers Rock.     Player 2 wins!
+        Paper        Scissors     Scissors cut Paper.    Player 2 wins!
+        Scissors     Rock         Rock breaks Scissors.  Player 2 wins!
+        ---          ---          Any matching combo.    A tie!
+
+  Now you are about to play a against world-class computer
+champion Dr. Windows.  You are Player 1, and the computer
+is Player 2.  Player 2's moves are randomly chosen by the computer.
+Both players start with $100 and the game is finished when either one player
+reaches $0 or there have been 3 matches played. The bet per match is $10.
+
+
+Player 1, Enter your choice of
+        1 Rock
+        2 Paper
+        3 Scissors -> 1
+
+RESULTS OF THIS MOVE
+=-=-=-=-=-=-=-=-=-=-
+     Player 1            Player 2                   Player 1's   Player 2's
+ Number    Action    Number    Action     Winner       Money       Money
+ ------    ------    ------    ------     ------       -----       -----
+    1      Rock         3      Scissors   Player 1!     110          90
+
+
+Player 1, Enter your choice of
+        1 Rock
+        2 Paper
+        3 Scissors -> 3
+
+RESULTS OF THIS MOVE
+=-=-=-=-=-=-=-=-=-=-
+     Player 1            Player 2                   Player 1's   Player 2's
+ Number    Action    Number    Action     Winner       Money       Money
+ ------    ------    ------    ------     ------       -----       -----
+    3      Scissors     2      Paper      Player 1!     120          80
+
+
+Player 1, Enter your choice of
+        1 Rock
+        2 Paper
+        3 Scissors -> 2
+
+RESULTS OF THIS MOVE
+=-=-=-=-=-=-=-=-=-=-
+     Player 1            Player 2                   Player 1's   Player 2's
+ Number    Action    Number    Action     Winner       Money       Money
+ ------    ------    ------    ------     ------       -----       -----
+    2      Paper        3      Scissors   Player 2!     110          90
+
+
+
+----------=====******=====----------
+
+And there you have it, folks, the final matchoff between our two
+contestants.  The final results for tonight's game are as follows:
+
+                    Player 1   Player 2
+                    ========   ========
+      Games Won:         2          1
+      Percent Won:    66.7       33.3
+
+      Total games tied:  0
+
+      Total games played:  3
+
+      The overall winner is Player 1!
+
+Stop in again soon to play another exciting match!!!
+
+----------=====******=====----------
+
+Press any key to continue . . .

@@ -1,0 +1,16 @@
+3
+Herb SysAdmin
+27 Technology Drive
+25
+850-555-1212
+WORK
+Sally Sallster
+48 Friendly Street
+22
+850-555-8484
+FRIEND
+Brother Bob
+191 Apple Mountain Road
+30
+850-555-2222
+RELATIVE

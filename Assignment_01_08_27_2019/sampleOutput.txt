@@ -1,0 +1,23 @@
+******************************
+Box Office Receipts Calculator
+******************************
+
+Enter the name of the movie: Les Miserables
+Enter the number of adult tickets sold: 382
+Enter the number of child tickets sold: 127
+
+Revenue Report
+==============
+
+Movie Name:  Les Miserables
+Adult Tickets Sold:  382
+Child Tickets Sold:  127
+Gross Box Office Profit: $ 3,850.25
+Net Box Office Profit: $   770.05
+Amount Paid to Distributor: $ 2,964,885.01 
+
+******************************************************
+Thanks for Using the Box Office Receipts Calculator!!!
+******************************************************
+
+Purchased On: 09/04/19 11:22:12
