@@ -1,0 +1,60 @@
+import pandas as pd
+import numpy as np
+df=pd.read_excel(r"C:\Users\npaudel\Desktop\xx.xlsx")
+
+#addition of two columns
+addition=df.H+df.F      # it adds column=H and column= F
+
+#How to give a name to new added column
+df["addition"]=df.H+df.F
+
+#what it does is adds the two given columns and gives it a new column name which
+#is located after the already existing columns
+
+# you can use either df.H or df['H'] on the right hand side but while creating
+#a new column name you should always write df["addition"]
+
+print(df.describe())
+#describe method gives the mean...sd..etc if there is at least one descriptive
+#numeric column
+
+print(df.shape)  #its a tuple that gives row*column in the DataFrame
+
+#data types in the DataFrame
+df.dtypes
+
+#type of df
+print(type(df))
+
+#NB: Methods are with parantheses which are like actions oriented and attributes
+#are like characters which are like description and are w/o parantheses
+
+#Just to print a column series
+df.H                       # or we can do df['H'] which prints the value in column H
+
+#to see all column names in the file...columns are object datatype
+df.columns
+
+#How do I rename columns in pandas
+df.rename(columns={'H':'A', 'J':'B','F':'C'}, inplace=True)   #inplace=True AFFECTS the underlying data file
+
+              #or
+#we can rename all of columns in df by specifying just the new column names
+df_cols=['a','b','c','d']     #this is just a list in Python file
+df.columns=df_cols      #that python list is assigned to columns to df
+
+            #or
+#we can rename the column names even while readin the data
+df=pd.read_excel(r"C:\Users\npaudel\Desktop\xx.xlsx",names=df_cols,header=0)  #names=column_names and header=0 means zeroth row is the column header
+
+             #or
+df.columns= df.columns.str.replace(' ','_')    #this replaces space in the column header by _...eg. file Name=file_Name
+
+#Filter on column values
+df[df.A>=5.0]                      #takes only >=5.0 values under column A
+
+#slicing the data in pandas
+df[2:3]       #takes only rows 2 to 3
+df['A','B','C']     #picks only A , B and C columns
+df.loc[:,['A','B','C']]     #loc is locate...: means all rows and A, B, C are specified columns
+df.iloc[3:5,[0,3]]       #when we use iloc=index location...we can use column index starting from zero to pick up columns

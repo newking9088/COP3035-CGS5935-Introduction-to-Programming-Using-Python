@@ -1,0 +1,75 @@
+#More about the pandas index
+import pandas as pd
+import numpy as np
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+drinks.continent.head()
+drinks.set_index("country",inplace=True)
+drinks.continent.value_counts()
+drinks.continent.value_counts().values
+drinks.continent.value_counts()["Africa"]  #works cos it is a series object
+
+#Creating a pandas series
+people=pd.Series([300000000, 85000], index=["Albania","Andorra"],name="population")
+print(people)
+
+#concatenate two rows or columns
+#pd.concat([drinks,people],axis=1)   #concate() column drinks and people
+
+#How do I select multiple rows and columns from pandas DataFrame
+ufo=pd.read_csv("https://bit.ly/uforeports")
+
+#loc is for filtering by rows index and selecting columns name
+ufo.loc[0,:]     #first is row and : means all columns
+ufo.loc[[0,1,2],:]  #these two
+ufo.loc[0:2,:]      #are same things....loc is inclusive on both sides
+ufo.loc[0:2]       #by default it says all columns
+
+#column selection
+ufo.loc[:,"City"]
+ufo.loc[:,"City":"State"]     #it means column City thru State
+
+#another way
+ufo.head(3).drop("Time",axis=1)
+
+#another use for loc to bool dtype
+ufo[ufo.city=="Okland"]
+ufo.loc[ufo.City=="Okland",:]
+
+#iloc is for filter rows and selecting rows by integer position
+ufo.iloc[:,[0:4]]     #with iloc last number is exclusive
+ufo.iloc[0:3,:]      #its always in the form of roe, column
+
+#shortcuts not recommended to use
+ufo[["City","State"]]      #same as ufo[[:,["City","State"]]
+ufo[0:2]                    #same as ufo[:,[0:2]]
+
+#ix is a blend between loc and iloc
+drinks=pd.read_csv("https://bit.ly/drinksbycountry",index_col="country")
+drinks.ix["Albania",0]   #0 refers to the position of column
+drinks.ix[1,"beer_servings"]     # 1 is position of row
+drinks.ix["Albania":"Andorra",0:2]
+ufo.ix[0:2,0:2]
+
+#How do I apply function to pandas DataFrame
+train=pd.read_csv("https://bit.ly/kaggletrain")
+print(train.head())
+
+#map method...its a Series method
+train["Sex_num"]=train.Sex.map({"female":0,"male":1})   #it maps sex to numbers
+
+#apply is both a Series and DataFrame method
+train["Name_length"]=train.Name.apply(len)
+train.loc[0:4,["Name","Name_length"]
+
+#apply using np
+train["Fair_ceil"]=train.Fare.apply(np.ceil)  #ceiling rounds up the #s
+train.loc[0:4,["Fare","Fare_ceil"]
+train.Name.str.spllit(',')    #split a string into list of strings eg. Raj paudel
+
+def get_element (my_list,position):
+          return my_list[position]
+train.Name.str.split(",").apply(get_element,position=0)
+
+          
+
+

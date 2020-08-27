@@ -1,0 +1,60 @@
+#How do I use the "axis" parameter in pandas
+
+import pandas as pd
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+drinks.head()
+
+#drop continent column in the DataFrame and check if it is dropped with head()
+print(drinks.drop("continent",axis=1).head())
+
+#axis =1 says we wanna drop a column; we did not use inplace=True so its just a
+#temporary thing and does not affect the actual data file
+
+#drop row 2 to 4 using axis=0 and inplace not defined, by default its False
+print(drinks.drop([2,3,4],axis=0).head())
+
+#mean of each column
+print(drinks.mean(axis=0))     # we can do axis="index"
+
+#mean of each row
+print(drinks.mean(axis=1))     #we can do axis="columns"
+drinks.mean(axis=1).shape 
+
+#How do I use String method in Pandas
+orders=pd.read_table("https://bit.ly/chiporders")
+print(orders.head())
+orders.item_price.str.upper()     #you have to use str explicitly in pandas
+orders.item_name.str.contains("Chicken") #it checks if we have chicken in the item_name
+
+#Google pandas API Reference, then search for string handlings for more details
+
+#How do I change the data type of a pandas series
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+print(drinks.dtypes)
+drinks["beer_servings"]=drinks.beer_servings.astype(float)  #convert as float type
+
+#we change dtype during the reading process
+drinks=pd.read_csv("https://bit.ly/drinksbycountry",dtype={"beer_servings":float})
+
+#Getting mean of a series in DataFrame
+orders=pd.read_table("https://bit.ly/chiporders")
+orders.item_price.str.replace('$',' ').astype(float).mean()
+#we have to add astype because even though we removed $ sign rest of it is still a string
+orders.item_name.str.contains("Chicken")
+#we can convert the above bool in integer dtype
+orders.item_name.str.contains("Chicken").astype(float)
+
+#How/When do I use "groupby" in pandas
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+drinks.beer_servings.mean()
+
+#what if you want to get the average by continents
+drinks.groupby("continet").beer_servings_mean()
+drinks[drinks.continent=="Europe"].beer_servings_mean()
+
+#groupby helps to analyze the data by a category
+drinks[drinks.continent=="Europe"].beer_servings_max()
+drinks[drinks.continent=="Europe"].beer_servings_min()
+drinks[drinks.continent=="Europe"].beer_servings.agg(["count","min","max"]) #count means how many
+#countries in Africa...agg() function allows you to provide many math operation at a time
+

@@ -1,0 +1,46 @@
+#sorting data in  pandas DataFrame
+df=pd.read_csv("https://bit.ly/imdbratings")
+print(df.head())
+
+df.title.sort_values()      #title is the column of df and it is sorted alphabetically now  or df["title"].sort_values()
+df["title"].sort_values(ascending=False)    #it means sorted in opposite way...thru Z to A...IT IS NOT CHANGING underlying data as we have no inplace=True
+#df.sort_values["title"]
+
+#How do I filter rows of a pandas DataFrame by column values
+movies=pd.read_csv("https://bit.ly/imdbratings")
+
+#create a list of booleans
+booleans=[]
+for length in movies.duration:
+    if length>=200:
+        booleans.append(True)
+    else:
+        booleans.append(False)
+
+#print(len(booleans)
+#now convert boolean series to pandas series
+is_long=pd.Series(booleans)    #converts booleans into pandas series
+#final step is introducing is_long column into df
+movies[is_long]      # now it shows only the columns with duration>=200
+
+          #or
+is_long=movies.duration>=200    #it replaces our previous loop...this is a series comparison
+movies[is_long]        # or directly movies[movies.duration>=200]
+
+#selecting another column with filtered column DataFrame
+movies.loc[movies.duration>=200,"genre"]    #loc is very powerful methos which allow you to select rows and columns by label
+
+#HOW DO I APPLY MULTIPLY FILTER CRITERIA TO PANDAS DATAFRAME
+movies=pd.read_csv("https://bit.ly/imdbratings")
+
+#filtering data using more conditions
+movies[(movies.duration>=200)&(movies.genre=="Drama")]   #cannot use and in pandas
+
+#get only selected columns
+ufo=pd.read_csv("https://bit.ly/uforeports", usecols=["City","State"])   # or we could use usecols=[0,4] ..refe by indices
+ufo=pd.read_csv("https://bit.ly/uforeports", nrows=3)              #gives only first three rows
+
+#Dropping non-numeric data from a DataFrame
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+import numpy as np
+drinks.select.dtype(include=np.number)    #it only selects numeric columns

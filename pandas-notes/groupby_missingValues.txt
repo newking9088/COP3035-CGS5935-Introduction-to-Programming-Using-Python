@@ -1,0 +1,64 @@
+#How do I explore a pandas series
+import pandas as pd
+movies=pd.read_csv("https://bit.ly/imdbratings")
+movies.genre.describe()   #gives the count, most repeated genre
+movies.genre.value_counts()   #it gives how many times each item in genre are repeated
+movies_genre.value_counts(normalize=True)      #gives the count in %
+movies.genre.unique()      #gives the item that occur only once
+movies.genre.nunique()    #gives the number of unique items
+movies.duration.describe()
+movies.duration.value_counts()  #gives the number of movies  count by duration
+
+#How do I handle missing values in Python
+ufo=pd.read_csv("https://bit.ly/uforeports")
+ufo.tail()
+
+#if we see NaN=not a number (missing value)...
+ufo.isnull.tail()
+#it shows a False if something is not missing and shows True if something is missing
+ufo.notnull.tail()
+#it does the opposite of isnull
+
+#number of missing values in each of columns
+ufo.isnull.sum()
+
+#lets understand this
+pd.Series([True,False,True]).sum()   #sum is along axis=0 by default
+#sums bool as True=1 and False=0
+ufo[ufo.City.isnull()]   #gives missing value in City column
+
+#what should we do about missing values
+ufo.shape    #just to see the shape
+ufo.dropna(how='any')     #drop a row if any of its values  are missing
+ufo.dropna(how="all")    #only drop a row if all of its values are missing
+ufo.dropna(subset=["City","Shape Reported"], how="any") #drop a row if eother City
+#or Shape Reported are missing...you can change how="all" as well
+
+#Filling missing values
+ufo["Shape Reported"].value_counts()   #it excludes missing values
+ufo["Shape Reported"].value_counts(dropna=False) #includes NaN as well
+#fill in NaN with VARIOUS
+ufo["Shape Reported"].fillna(value="VARIOUS",inplace=True)
+
+#What do I need to know about the index in pandas
+drinks=pd.read_csv("https://bit.ly/drinksbycountry")
+drinks.index            # the index, or row labels is for each row and it starts from 0
+drinks.columns          
+
+drinks.loc[23,"beer_servings"]   #row=23 and column="beer_servings" which gives value in that cell
+drinks.set_index("country",inplace=True) #default index 0,1,2...disappears and
+#sets the country as row index
+print(drinks.index)
+print(drinks.shape)
+drinks.loc['Brazil","beer_servings"]    #Brazil is row and beer_servings is column
+drinks.index.name="country"
+drinks.reset_index(inplace=True)  #define index before doing it
+
+
+
+
+
+  
+
+
+
